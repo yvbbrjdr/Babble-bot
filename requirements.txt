@@ -1,0 +1,2 @@
+pysodium==0.7.0.post0
+python-telegram-bot==10.0.1
