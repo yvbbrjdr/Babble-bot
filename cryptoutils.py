@@ -22,7 +22,11 @@ def base_hanzi_encode(message, base):
     return ''.join(base[c] for c in message)
 
 def base_hanzi_decode(message, base):
-    return bytes(base.index(c) for c in message)
+    l = []
+    for c in message:
+        if c in base:
+            l.append(base.index(c))
+    return bytes(l)
 
 def babble(message, passphrase, base):
     return base_hanzi_encode(encrypt(message, derive_key(passphrase)), base)
